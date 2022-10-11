@@ -64,5 +64,12 @@ namespace SearchingForStudents
             else MessageBox.Show("Bad Data or Empty Form");
         }
 
+        private void log_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form2 form2 = new Form2();
+            form2.Closed += (s, args) => this.Close();
+            form2.Show();
+        }
     }
 }

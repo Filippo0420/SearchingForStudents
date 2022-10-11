@@ -80,5 +80,26 @@ namespace SearchingForStudents
             writeFile(path, $"{textBox_name.Text} {textBox_surname.Text} {textBox_class.Text}");
             MessageBox.Show("Dodano");
         }
+
+        private void test_button_Click(object sender, EventArgs e)
+        {
+            StudentDAO dao = new StudentDAO();
+            Student student = new Student
+            {
+                Id = 1,
+                Name = "Kacper",
+                Surname = "Pawlak",
+                Class = "4Pr"
+            };
+            dao.students.Add(student);
+            try
+            {
+                dao.openConn();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
     }
 }
